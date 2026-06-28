@@ -1,0 +1,19 @@
+# Sepela Group Project Rules
+
+## Tech Stack & Architecture
+- Framework: Next.js 15 (App Router), React 19, TypeScript
+- Styling: Tailwind CSS, Shadcn UI
+- Animation: Framer Motion
+- Form Handling: React Hook Form + Zod
+
+## Critical Development Directives
+- NEVER include or commit 'node_modules' under any circumstances. Respect .gitignore rigorously.
+- Use the Next.js App Router convention: server components by default, add "use client" ONLY when interactivity (state, hooks, animations) is required.
+- Always use the optimized Next.js Next/Image component (`<Image />`) for assets. Provide clear `alt` descriptions.
+- All components must be fully responsive (mobile-first layout via Tailwind utilities).
+
+## Code Style & Conventions
+- Write clean, type-safe, self-documenting TypeScript code.
+- Avoid using `any`. Define explicit interfaces or types for all component props and API responses.
+- Implement functional components with explicit return types (`JSX.Element` or React nodes).
+- Group Tailwind classes logically (Layout -> Sizing -> Typography -> Colors -> Interactive states).
