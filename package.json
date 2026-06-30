@@ -2,16 +2,22 @@
   "name": "sepela-group",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "predev": "node scripts/clean-next.mjs",
     "dev": "next dev",
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
+    "build:render": "npm run db:migrate:prod && next build",
     "start": "next start",
     "lint": "next lint",
     "clean": "node scripts/clean-next.mjs --full",
     "db:migrate": "tsx --env-file=.env.local scripts/db-migrate.ts",
+    "db:migrate:prod": "tsx scripts/db-migrate.ts",
     "db:seed": "tsx --env-file=.env.local scripts/db-seed.ts",
+    "db:seed:prod": "tsx scripts/db-seed.ts",
     "db:test": "tsx --env-file=.env.local scripts/test-db-connection.mjs"
   },
   "dependencies": {

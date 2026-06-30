@@ -1,0 +1,34 @@
+# Render Blueprint — free-tier test deploy
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Setup:
+# 1. Push this repo to GitHub/GitLab
+# 2. Render Dashboard → New → Blueprint → connect repo
+# 3. Set secret env vars in the dashboard (DATABASE_URL, ADMIN_PASSWORD, ADMIN_SESSION_SECRET)
+# 4. After first deploy, seed data locally: npm run db:seed:prod (with production DATABASE_URL)
+
+services:
+  - type: web
+    name: sepela-group
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: npm ci && npm run build:render
+    startCommand: npm start
+    healthCheckPath: /fr
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_SESSION_SECRET
+        sync: false
+      - key: DB_TIMEOUT_MS
+        value: "10000"
+      - key: DB_CLI_TIMEOUT_MS
+        value: "30000"

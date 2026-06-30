@@ -50,7 +50,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
 
       return merged;
     },
-    () => jsonSettings,
+    async () => jsonSettings,
   );
 }
 
