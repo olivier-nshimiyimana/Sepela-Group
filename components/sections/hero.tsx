@@ -1,33 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-interface HeroMetric {
-  label: string;
-  value: string;
-}
+import { Link } from "@/i18n/navigation";
 
-interface HeroAction {
-  label: string;
-  href: string;
-  variant: "primary" | "secondary";
-}
-
-const HERO_METRICS: readonly HeroMetric[] = [
-  { label: "System Uptime", value: "99.97%" },
-  { label: "Regional Operations", value: "12+" },
-  { label: "Transactions", value: "2.4M+" },
-  { label: "Enterprise Clients", value: "150+" },
-] as const;
-
-const HERO_ACTIONS: readonly HeroAction[] = [
-  { label: "Explore Products", href: "#products", variant: "primary" },
-  { label: "Contact Sales", href: "#contact", variant: "secondary" },
-] as const;
-
-const HERO_BACKGROUND_SRC = "/softbackground.jpg?v=3";
+const HERO_BACKGROUND_SRC = "/softbackground.jpg";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -47,21 +25,35 @@ const itemVariants: Variants = {
 };
 
 export function Hero(): React.ReactElement {
+  const t = useTranslations("hero");
+  const prefersReducedMotion = useReducedMotion();
+
+  const metrics = [
+    { label: t("metrics.uptime"), value: "99.97%" },
+    { label: t("metrics.regions"), value: "12+" },
+    { label: t("metrics.transactions"), value: "2.4M+" },
+    { label: t("metrics.clients"), value: "150+" },
+  ] as const;
+
+  const actions = [
+    { label: t("exploreProducts"), href: "#products", variant: "primary" as const },
+    { label: t("contactSales"), href: "#contact", variant: "secondary" as const },
+  ] as const;
+
+  const motionProps = prefersReducedMotion
+    ? { initial: false as const, animate: "visible" as const }
+    : { initial: "hidden" as const, animate: "visible" as const };
+
   return (
     <section
       id="home"
       aria-labelledby="hero-heading"
-      className="relative flex h-[calc(100dvh-4rem)] max-h-[780px] flex-col justify-center overflow-hidden pb-10 sm:max-h-[820px] sm:pb-12"
+      className="hero-section relative flex min-h-[calc(100svh-5rem)] max-h-[780px] flex-col justify-center overflow-hidden pb-6 sm:max-h-[820px] sm:pb-8"
     >
-      <div aria-hidden="true" className="absolute inset-0 z-0">
-        <Image
-          src={HERO_BACKGROUND_SRC}
-          alt=""
-          fill
-          priority
-          quality={95}
-          sizes="100vw"
-          className="object-cover object-[72%_center] sm:object-[78%_center] lg:object-[right_center]"
+      <div aria-hidden="true" className="hero-background">
+        <div
+          className="hero-background-image"
+          style={{ backgroundImage: `url("${HERO_BACKGROUND_SRC}")` }}
         />
         <div className="hero-overlay absolute inset-0" />
         <div className="hero-ambient-accent absolute -right-24 top-1/4 h-56 w-56 rounded-full blur-3xl" />
@@ -72,27 +64,22 @@ export function Hero(): React.ReactElement {
         <motion.div
           className="flex flex-col gap-5 sm:gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-8"
           variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          {...motionProps}
         >
           <div className="flex max-w-xl flex-col gap-4 lg:max-w-2xl lg:gap-5">
             <motion.div variants={itemVariants} className="flex flex-col gap-2.5 sm:gap-3">
               <h1 id="hero-heading" className="hero-title">
-                Experience the Future of Enterprise Technology
+                {t("title")}
               </h1>
 
-              <p className="hero-lead">
-                Comprehensive digital solutions tailored to your business —
-                production-grade platforms engineered with cutting-edge
-                technology and enterprise reliability.
-              </p>
+              <p className="hero-lead">{t("lead")}</p>
             </motion.div>
 
             <motion.div
               variants={itemVariants}
               className="flex flex-wrap gap-2.5 sm:gap-3"
             >
-              {HERO_ACTIONS.map((action) => (
+              {actions.map((action) => (
                 <Link
                   key={action.href}
                   href={action.href}
@@ -112,10 +99,10 @@ export function Hero(): React.ReactElement {
             variants={itemVariants}
             className="grid w-full grid-cols-2 gap-2 sm:gap-2.5 lg:w-64 lg:shrink-0 xl:w-72"
           >
-            {HERO_METRICS.map((metric) => (
+            {metrics.map((metric) => (
               <div key={metric.label} className="hero-metric-card group">
                 <p className="hero-metric-label">{metric.label}</p>
-                <p className="hero-metric-value mt-0.5 text-base sm:text-lg lg:text-xl">
+                <p className="hero-metric-value mt-1 sm:mt-0.5">
                   {metric.value}
                 </p>
               </div>

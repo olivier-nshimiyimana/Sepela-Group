@@ -1,0 +1,49 @@
+{
+  "articles": [
+    {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "slug": "sepela-group-secures-enterprise-partnership",
+      "title": "Sepela Group secures major enterprise partnership across East Africa",
+      "excerpt": "We are proud to announce a new strategic partnership that expands our cinema, ERP, and events platforms to enterprise clients across multiple regions.",
+      "content": "Sepela Group has signed a landmark enterprise agreement to deliver integrated digital infrastructure for media, retail, and event operations.\n\nThe partnership covers deployment of Sepela Cinema for streaming workflows, Sepela ERP for tax-compliant retail operations, and Sepela Events for secure digital ticketing.\n\nOur engineering teams will work closely with client stakeholders to roll out production-grade systems with 99.9% uptime targets, regional compliance, and dedicated support channels.\n\nThis milestone reflects our commitment to building technology that scales with ambitious organizations across Africa and beyond.",
+      "author": "Sepela Communications",
+      "coverImage": "/softbackground.jpg",
+      "images": [],
+      "publishedAt": "2026-05-20T09:00:00.000Z",
+      "views": 1286,
+      "published": true,
+      "createdAt": "2026-05-20T09:00:00.000Z",
+      "updatedAt": "2026-05-20T09:00:00.000Z"
+    },
+    {
+      "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "slug": "sepela-events-launches-secure-ticketing-platform",
+      "title": "Sepela Events launches secure digital ticketing with real-time validation",
+      "excerpt": "Our new ticketing engine introduces cryptographic QR validation, seat mapping, and live capacity controls for large-scale venues.",
+      "content": "Sepela Events is now available for venues that need fraud-resistant ticketing and operational visibility from box office to gate.\n\nThe platform supports dynamic QR codes, multi-gate scanning, and real-time dashboards for organizers and security teams.\n\nEarly adopters report faster entry times and a measurable reduction in duplicate ticket attempts.\n\nContact our sales team to schedule a demo and discuss deployment for your next major event.",
+      "author": "Product Team",
+      "coverImage": "/softbackground.jpg",
+      "images": [],
+      "publishedAt": "2026-05-10T14:30:00.000Z",
+      "views": 856,
+      "published": true,
+      "createdAt": "2026-05-10T14:30:00.000Z",
+      "updatedAt": "2026-05-10T14:30:00.000Z"
+    },
+    {
+      "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "slug": "engineering-team-expands-cloud-infrastructure-practice",
+      "title": "Engineering team expands cloud infrastructure practice for enterprise clients",
+      "excerpt": "Sepela Group is growing its cloud engineering bench to support multi-region deployments, observability, and security hardening.",
+      "content": "To meet rising demand for resilient enterprise platforms, Sepela Group has expanded its cloud infrastructure practice.\n\nThe team now offers architecture reviews, automated deployment pipelines, and 24/7 observability for mission-critical workloads.\n\nWe continue to invest in talent across backend engineering, DevOps, and security so our clients can ship faster with confidence.\n\nFollow our news updates for hiring announcements and technical insights from the team.",
+      "author": "People & Culture",
+      "coverImage": "/softbackground.jpg",
+      "images": [],
+      "publishedAt": "2026-04-28T11:15:00.000Z",
+      "views": 509,
+      "published": true,
+      "createdAt": "2026-04-28T11:15:00.000Z",
+      "updatedAt": "2026-04-28T11:15:00.000Z"
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 
+import { createContactSubmission } from "@/lib/contact/storage";
+import { getRequestLocaleFromRequest } from "@/lib/i18n/locale";
+import { getMessage } from "@/lib/i18n/message";
+import { checkRateLimit, getClientIp } from "@/lib/security/rate-limit";
 import {
   contactFormSchema,
   formatZodErrors,
@@ -19,6 +23,28 @@ interface ContactErrorResponse {
 export async function POST(
   request: Request,
 ): Promise<NextResponse<ContactSuccessResponse | ContactErrorResponse>> {
+  const locale = getRequestLocaleFromRequest(request);
+  const translate = (key: string) => getMessage(locale, key);
+
+  const rateLimit = checkRateLimit(
+    `contact:${getClientIp(request)}`,
+    5,
+    60 * 60 * 1000,
+  );
+
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      {
+        success: false,
+        errors: { _form: translate("errors.contactRateLimited") },
+      },
+      {
+        status: 429,
+        headers: { "Retry-After": String(rateLimit.retryAfterSeconds) },
+      },
+    );
+  }
+
   let body: unknown;
 
   try {
@@ -27,7 +53,7 @@ export async function POST(
     return NextResponse.json(
       {
         success: false,
-        errors: { _form: "Request body must be valid JSON." },
+        errors: { _form: translate("errors.invalidJson") },
       },
       { status: 400 },
     );
@@ -39,7 +65,7 @@ export async function POST(
     return NextResponse.json(
       {
         success: false,
-        errors: formatZodErrors(result.error),
+        errors: formatZodErrors(result.error, translate),
       },
       { status: 400 },
     );
@@ -47,26 +73,32 @@ export async function POST(
 
   const payload: ContactFormPayload = result.data;
 
-  console.log("[contact] New consultation request received:", {
-    name: payload.fullName,
-    company: payload.companyName,
-    email: payload.businessEmail,
-    service: payload.interest,
-    briefLength: payload.projectBrief.length,
-    receivedAt: new Date().toISOString(),
-  });
+  try {
+    await createContactSubmission(payload);
+  } catch (error) {
+    console.error("[contact] Failed to persist submission:", error);
+    return NextResponse.json(
+      {
+        success: false,
+        errors: {
+          _form: translate("errors.contactSaveFailed"),
+        },
+      },
+      { status: 500 },
+    );
+  }
 
-  console.log(
-    "[contact] TODO: Dispatch notification via mailing service (Resend / SendGrid)",
-  );
-  console.log(
-    "[contact] TODO: Persist lead record to database (PostgreSQL / Supabase)",
-  );
+  if (process.env.NODE_ENV === "development") {
+    console.log("[contact] Submission saved", {
+      service: payload.interest,
+      briefLength: payload.projectBrief.length,
+    });
+  }
 
   return NextResponse.json(
     {
       success: true,
-      message: "Consultation request received successfully.",
+      message: translate("errors.contactSuccess"),
     },
     { status: 200 },
   );

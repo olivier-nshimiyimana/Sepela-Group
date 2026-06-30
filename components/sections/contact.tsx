@@ -1,15 +1,11 @@
 "use client";
 
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { useMemo, useState, type ChangeEvent, type FormEvent } from "react";
 
-type InterestOption =
-  | "sepela-cinema"
-  | "sepela-erp"
-  | "sepela-events"
-  | "custom-app-development"
-  | "business-automation"
-  | "cloud-scaling"
-  | "general-consultation";
+import type { InterestOption } from "@/lib/validations/contact";
+import type { SiteSettings } from "@/lib/settings/types";
 
 interface ContactFormData {
   fullName: string;
@@ -23,19 +19,15 @@ type ContactFormField = keyof ContactFormData;
 
 type ContactFormErrors = Partial<Record<ContactFormField, string>>;
 
-interface InterestSelectOption {
-  value: InterestOption;
-  label: string;
-}
-
-const INTEREST_OPTIONS: readonly InterestSelectOption[] = [
-  { value: "sepela-cinema", label: "Sepela Cinema" },
-  { value: "sepela-erp", label: "Sepela ERP" },
-  { value: "sepela-events", label: "Sepela Events" },
-  { value: "custom-app-development", label: "Custom App Development" },
-  { value: "business-automation", label: "Business & Process Automation" },
-  { value: "cloud-scaling", label: "Cloud Computing & Scaling" },
-  { value: "general-consultation", label: "General Consultation" },
+const INTEREST_VALUES: readonly InterestOption[] = [
+  "sepela-cinema",
+  "sepela-erp",
+  "sepela-events",
+  "sepela-e-voting",
+  "custom-app-development",
+  "business-automation",
+  "cloud-scaling",
+  "general-consultation",
 ] as const;
 
 const INITIAL_FORM_DATA: ContactFormData = {
@@ -48,42 +40,46 @@ const INITIAL_FORM_DATA: ContactFormData = {
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+type ContactTranslator = ReturnType<typeof useTranslations<"contact">>;
+
 function validateField(
   field: ContactFormField,
   value: string,
+  t: ContactTranslator,
 ): string | undefined {
   switch (field) {
     case "fullName":
-      if (!value.trim()) return "Full name is required.";
-      if (value.trim().length < 2) return "Enter at least 2 characters.";
+      if (!value.trim()) return t("validation.fullNameRequired");
+      if (value.trim().length < 2) return t("validation.fullNameMin");
       return undefined;
     case "companyName":
-      if (!value.trim()) return "Company name is required.";
-      if (value.trim().length < 2) return "Enter at least 2 characters.";
+      if (!value.trim()) return t("validation.companyNameRequired");
+      if (value.trim().length < 2) return t("validation.companyNameMin");
       return undefined;
     case "businessEmail":
-      if (!value.trim()) return "Business email is required.";
-      if (!EMAIL_PATTERN.test(value.trim()))
-        return "Enter a valid email address.";
+      if (!value.trim()) return t("validation.emailRequired");
+      if (!EMAIL_PATTERN.test(value.trim())) return t("validation.emailInvalid");
       return undefined;
     case "interest":
-      if (!value) return "Select a product or service of interest.";
+      if (!value) return t("validation.interestRequired");
       return undefined;
     case "projectBrief":
-      if (!value.trim()) return "Project brief is required.";
-      if (value.trim().length < 20)
-        return "Provide at least 20 characters describing your project.";
+      if (!value.trim()) return t("validation.briefRequired");
+      if (value.trim().length < 20) return t("validation.briefMin");
       return undefined;
     default:
       return undefined;
   }
 }
 
-function validateForm(data: ContactFormData): ContactFormErrors {
+function validateForm(
+  data: ContactFormData,
+  t: ContactTranslator,
+): ContactFormErrors {
   const errors: ContactFormErrors = {};
 
   (Object.keys(data) as ContactFormField[]).forEach((field) => {
-    const error = validateField(field, data[field]);
+    const error = validateField(field, data[field], t);
     if (error) errors[field] = error;
   });
 
@@ -118,13 +114,24 @@ function FormField({
   );
 }
 
-export function Contact(): React.ReactElement {
+interface ContactProps {
+  settings: SiteSettings;
+}
+
+export function Contact({ settings }: ContactProps): React.ReactElement {
+  const t = useTranslations("contact");
+  const locale = useLocale();
   const [formData, setFormData] = useState<ContactFormData>(INITIAL_FORM_DATA);
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [touched, setTouched] = useState<Partial<Record<ContactFormField, boolean>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const benefits = useMemo(
+    () => t.raw("benefits") as string[],
+    [t],
+  );
 
   function handleChange(
     field: ContactFormField,
@@ -134,7 +141,7 @@ export function Contact(): React.ReactElement {
     setFormData((prev) => ({ ...prev, [field]: value }));
 
     if (touched[field]) {
-      const error = validateField(field, value);
+      const error = validateField(field, value, t);
       setErrors((prev) => {
         const next = { ...prev };
         if (error) {
@@ -149,7 +156,7 @@ export function Contact(): React.ReactElement {
 
   function handleBlur(field: ContactFormField): void {
     setTouched((prev) => ({ ...prev, [field]: true }));
-    const error = validateField(field, formData[field]);
+    const error = validateField(field, formData[field], t);
     setErrors((prev) => {
       const next = { ...prev };
       if (error) {
@@ -164,7 +171,7 @@ export function Contact(): React.ReactElement {
   async function handleSubmit(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
 
-    const validationErrors = validateForm(formData);
+    const validationErrors = validateForm(formData, t);
     setErrors(validationErrors);
     setTouched({
       fullName: true,
@@ -182,7 +189,10 @@ export function Contact(): React.ReactElement {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-locale": locale,
+        },
         body: JSON.stringify({
           fullName: formData.fullName.trim(),
           companyName: formData.companyName.trim(),
@@ -202,9 +212,7 @@ export function Contact(): React.ReactElement {
         if (data.errors) {
           setErrors(data.errors as ContactFormErrors);
         }
-        setSubmitError(
-          data.errors?._form ?? "Submission failed. Please review your entries.",
-        );
+        setSubmitError(data.errors?._form ?? t("errors.submitFailed"));
         return;
       }
 
@@ -213,7 +221,7 @@ export function Contact(): React.ReactElement {
       setTouched({});
       setErrors({});
     } catch {
-      setSubmitError("Network error. Please try again.");
+      setSubmitError(t("errors.network"));
     } finally {
       setIsSubmitting(false);
     }
@@ -227,37 +235,32 @@ export function Contact(): React.ReactElement {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="bg-brand-muted py-20 sm:py-28"
+      className="bg-brand-muted section-spacing section-spacing-end"
     >
       <div className="section-container">
-        <header className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
+        <header className="section-header">
           <h2 id="contact-heading" className="section-heading">
-            Ready to transform your operations?
+            {t("heading")}
           </h2>
         </header>
 
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="flex flex-col gap-4 lg:col-span-2">
             <h3
-              className="text-2xl font-bold sm:text-3xl"
+              className="text-[1.75rem] font-black leading-tight sm:text-3xl sm:font-bold"
               style={{ color: "var(--color-brand-primary)" }}
             >
-              Get in touch with us
+              {t("title")}
             </h3>
-            <p className="text-base leading-relaxed text-text-secondary">
-              Fill out the form below, and we&apos;ll get back to you as soon as
-              possible.
+            <p className="text-[1.0625rem] font-medium leading-relaxed text-text-secondary sm:text-base sm:font-normal">
+              {t("description")}
             </p>
 
-            <ul className="mt-2 flex flex-col gap-3" role="list">
-              {[
-                "No commitment required",
-                "Tailored product demonstrations",
-                "Enterprise deployment guidance",
-              ].map((item) => (
+            <ul className="mt-2 flex flex-col gap-3.5 sm:gap-3" role="list">
+              {benefits.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 text-sm text-text-primary"
+                  className="flex items-center gap-2.5 text-base font-semibold text-text-primary sm:gap-2 sm:text-sm sm:font-normal"
                 >
                   <span
                     aria-hidden="true"
@@ -267,6 +270,21 @@ export function Contact(): React.ReactElement {
                 </li>
               ))}
             </ul>
+
+            <ul className="mt-6 flex flex-col gap-3.5 border-t border-gray-200 pt-6 sm:gap-3" role="list">
+              <li className="flex items-center gap-3 text-base font-semibold text-text-primary sm:gap-2.5 sm:text-sm sm:font-normal">
+                <Mail aria-hidden="true" className="h-5 w-5 shrink-0 text-brand-primary sm:h-4 sm:w-4" />
+                {settings.email}
+              </li>
+              <li className="flex items-center gap-3 text-base font-semibold text-text-primary sm:gap-2.5 sm:text-sm sm:font-normal">
+                <Phone aria-hidden="true" className="h-5 w-5 shrink-0 text-brand-primary sm:h-4 sm:w-4" />
+                {settings.phone}
+              </li>
+              <li className="flex items-center gap-3 text-base font-semibold text-text-primary sm:gap-2.5 sm:text-sm sm:font-normal">
+                <MapPin aria-hidden="true" className="h-5 w-5 shrink-0 text-brand-primary sm:h-4 sm:w-4" />
+                {settings.addressLine}, {settings.city}, {settings.country}
+              </li>
+            </ul>
           </div>
 
           <div className="lg:col-span-3">
@@ -275,18 +293,18 @@ export function Contact(): React.ReactElement {
                 role="status"
                 className="rounded-2xl border border-brand-primary/30 bg-brand-light p-8 text-center"
               >
-                <p className="text-lg font-semibold text-brand-primary">
-                  Request received
+                <p className="text-xl font-bold text-brand-primary sm:text-lg sm:font-semibold">
+                  {t("successTitle")}
                 </p>
-                <p className="mt-2 text-sm text-text-secondary">
-                  Our team will reach out shortly to confirm your consultation.
+                <p className="mt-2 text-base font-medium text-text-secondary sm:text-sm sm:font-normal">
+                  {t("successDescription")}
                 </p>
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
                   className="btn-outline mt-6"
                 >
-                  Submit another request
+                  {t("submitAnother")}
                 </button>
               </div>
             ) : (
@@ -298,7 +316,7 @@ export function Contact(): React.ReactElement {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <FormField
                     id="fullName"
-                    label="Full Name"
+                    label={t("fullName")}
                     error={touched.fullName ? errors.fullName : undefined}
                   >
                     <input
@@ -314,13 +332,13 @@ export function Contact(): React.ReactElement {
                         errors.fullName ? "fullName-error" : undefined
                       }
                       className={fieldClassName("fullName")}
-                      placeholder="Jane Doe"
+                      placeholder={t("placeholders.fullName")}
                     />
                   </FormField>
 
                   <FormField
                     id="companyName"
-                    label="Company Name"
+                    label={t("companyName")}
                     error={touched.companyName ? errors.companyName : undefined}
                   >
                     <input
@@ -336,14 +354,14 @@ export function Contact(): React.ReactElement {
                         errors.companyName ? "companyName-error" : undefined
                       }
                       className={fieldClassName("companyName")}
-                      placeholder="Acme Corporation"
+                      placeholder={t("placeholders.companyName")}
                     />
                   </FormField>
                 </div>
 
                 <FormField
                   id="businessEmail"
-                  label="Business Email"
+                  label={t("businessEmail")}
                   error={touched.businessEmail ? errors.businessEmail : undefined}
                 >
                   <input
@@ -359,13 +377,13 @@ export function Contact(): React.ReactElement {
                       errors.businessEmail ? "businessEmail-error" : undefined
                     }
                     className={fieldClassName("businessEmail")}
-                    placeholder="jane@company.com"
+                    placeholder={t("placeholders.businessEmail")}
                   />
                 </FormField>
 
                 <FormField
                   id="interest"
-                  label="Product / Service of Interest"
+                  label={t("interest")}
                   error={touched.interest ? errors.interest : undefined}
                 >
                   <select
@@ -381,11 +399,11 @@ export function Contact(): React.ReactElement {
                     className={fieldClassName("interest")}
                   >
                     <option value="" disabled>
-                      Select an option
+                      {t("selectOption")}
                     </option>
-                    {INTEREST_OPTIONS.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
+                    {INTEREST_VALUES.map((value) => (
+                      <option key={value} value={value}>
+                        {t(`interests.${value}`)}
                       </option>
                     ))}
                   </select>
@@ -393,7 +411,7 @@ export function Contact(): React.ReactElement {
 
                 <FormField
                   id="projectBrief"
-                  label="Project Brief"
+                  label={t("projectBrief")}
                   error={touched.projectBrief ? errors.projectBrief : undefined}
                 >
                   <textarea
@@ -408,7 +426,7 @@ export function Contact(): React.ReactElement {
                       errors.projectBrief ? "projectBrief-error" : undefined
                     }
                     className={`${fieldClassName("projectBrief")} resize-y min-h-[120px]`}
-                    placeholder="Describe your goals, timeline, and technical requirements..."
+                    placeholder={t("placeholders.projectBrief")}
                   />
                 </FormField>
 
@@ -417,7 +435,7 @@ export function Contact(): React.ReactElement {
                   disabled={isSubmitting}
                   className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:self-start"
                 >
-                  {isSubmitting ? "Submitting..." : "Request Consultation"}
+                  {isSubmitting ? t("submitting") : t("submit")}
                 </button>
 
                 {submitError ? (

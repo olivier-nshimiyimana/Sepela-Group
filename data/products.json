@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": "a1000001-0000-4000-8000-000000000001",
+      "slug": "cinema",
+      "name": "Sepela Cinema",
+      "tagline": "Media & Streaming Infrastructure",
+      "description": "End-to-end streaming platform with adaptive delivery, content management, and analytics built for broadcasters and OTT providers.",
+      "content": "Sepela Cinema is a production-grade streaming and media operations platform designed for broadcasters, OTT providers, and enterprise media teams.\n\nDeploy adaptive bitrate delivery, multi-tenant content management, and real-time audience analytics from a single control plane.\n\nOur platform integrates with existing encoding pipelines and CDN providers while giving operations teams the visibility they need to maintain broadcast-quality experiences at scale.",
+      "coverImage": "/softbackground.jpg",
+      "images": [],
+      "features": [
+        "Adaptive bitrate streaming",
+        "Multi-tenant content CMS",
+        "Real-time audience analytics"
+      ],
+      "icon": "clapperboard",
+      "published": true,
+      "sortOrder": 1,
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "a2000002-0000-4000-8000-000000000002",
+      "slug": "erp",
+      "name": "Sepela ERP",
+      "tagline": "Tax-Compliant POS & Retail",
+      "description": "Unified point-of-sale and inventory system with automated tax compliance, multi-branch sync, and regulatory reporting.",
+      "content": "Sepela ERP unifies point-of-sale, inventory, and compliance workflows for retail and hospitality operators.\n\nAutomate tax calculations, synchronize stock across branches, and generate audit-ready reports without manual reconciliation.\n\nBuilt for multi-location businesses that need reliable offline-capable POS with centralized oversight.",
+      "coverImage": "/softbackground.jpg",
+      "images": [],
+      "features": [
+        "Automated tax compliance",
+        "Multi-branch inventory sync",
+        "Regulatory audit trails"
+      ],
+      "icon": "shopping-cart",
+      "published": true,
+      "sortOrder": 2,
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "a3000003-0000-4000-8000-000000000003",
+      "slug": "events",
+      "name": "Sepela Event",
+      "tagline": "Secure Digital Ticketing",
+      "description": "Fraud-resistant ticketing engine with dynamic QR validation, seat mapping, and real-time capacity management.",
+      "content": "Sepela Event delivers secure digital ticketing for venues, festivals, and enterprise conferences.\n\nDynamic QR validation, seat mapping, and live capacity dashboards help organizers reduce fraud and improve gate throughput.\n\nIntegrate with payment providers and access control systems through our API-first architecture.",
+      "coverImage": "/softbackground.jpg",
+      "images": [],
+      "features": [
+        "Cryptographic ticket validation",
+        "Dynamic seat mapping",
+        "Real-time capacity controls"
+      ],
+      "icon": "ticket",
+      "published": true,
+      "sortOrder": 3,
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "a4000004-0000-4000-8000-000000000004",
+      "slug": "e-voting",
+      "name": "Sepela E-Voting",
+      "tagline": "Competition & Election Voting",
+      "description": "Secure digital voting platform for competitions, awards, and organizational elections with auditable results.",
+      "content": "Sepela E-Voting is built for competitions, pageants, awards ceremonies, and organizational elections that need transparent, tamper-resistant balloting.\n\nVoters cast ballots from web or mobile with real-time tallying, role-based access, and exportable audit logs for organizers and judges.\n\nConfigure voting windows, eligibility rules, and multi-round elimination formats — details and branding can be updated as your event takes shape.",
+      "coverImage": "/softbackground.jpg",
+      "images": [],
+      "features": [
+        "Secure one-person-one-vote controls",
+        "Live results dashboard",
+        "Auditable vote records"
+      ],
+      "icon": "vote",
+      "published": true,
+      "sortOrder": 4,
+      "createdAt": "2026-06-30T00:00:00.000Z",
+      "updatedAt": "2026-06-30T00:00:00.000Z"
+    }
+  ]
+}

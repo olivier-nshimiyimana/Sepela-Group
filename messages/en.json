@@ -1,0 +1,414 @@
+{
+  "metadata": {
+    "title": "Sepela Group | Enterprise Technology Solutions",
+    "description": "Sepela Group builds production-grade media, retail, and event infrastructure for enterprises across Africa and beyond."
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "capabilities": "Capabilities",
+    "team": "Team",
+    "news": "News",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primary": "Primary navigation",
+    "logoAlt": "Sepela Group logo"
+  },
+  "hero": {
+    "title": "Experience the Future of Enterprise Technology",
+    "lead": "Comprehensive digital solutions tailored to your business — production-grade platforms engineered with cutting-edge technology and enterprise reliability.",
+    "exploreProducts": "Explore Products",
+    "contactSales": "Contact Sales",
+    "metrics": {
+      "uptime": "System Uptime",
+      "regions": "Regional Operations",
+      "transactions": "Transactions",
+      "clients": "Enterprise Clients"
+    }
+  },
+  "products": {
+    "eyebrow": "Product Suite",
+    "heading": "Key Products",
+    "description": "Discover how our comprehensive suite of production applications revolutionizes media, retail, and event operations.",
+    "empty": "Products will appear here once published in the admin panel.",
+    "learnMore": "Learn more",
+    "keyFeatures": "Key Features",
+    "contactSales": "Contact Sales",
+    "backToProducts": "Back to Products",
+    "galleryAlt": "{name} gallery",
+    "breadcrumbHome": "Home",
+    "breadcrumbProducts": "Products"
+  },
+  "capabilities": {
+    "eyebrow": "Bespoke Services",
+    "heading": "Bespoke Services",
+    "description": "Beyond our product suite, we design and deliver custom solutions that integrate seamlessly with your existing infrastructure.",
+    "items": {
+      "customApps": {
+        "title": "Custom App Development",
+        "subtitle": "Web, Mobile & Desktop",
+        "description": "Bespoke applications engineered for your workflows — from responsive web platforms to native mobile utilities and desktop tooling.",
+        "highlights": [
+          "Cross-platform web & mobile",
+          "Desktop utility tooling",
+          "API-first architecture"
+        ]
+      },
+      "automation": {
+        "title": "Business & Process Automation",
+        "subtitle": "Industrial & Workflow Scripts",
+        "description": "Eliminate manual bottlenecks with intelligent automation pipelines, industrial integrations, and custom workflow orchestration.",
+        "highlights": [
+          "Workflow orchestration",
+          "Industrial system integration",
+          "Scheduled task automation"
+        ]
+      },
+      "cloud": {
+        "title": "Cloud Computing & Scaling",
+        "subtitle": "High-Availability Infrastructure",
+        "description": "Design, deploy, and manage resilient cloud infrastructure with auto-scaling, failover, and performance optimization baked in.",
+        "highlights": [
+          "Multi-region deployment",
+          "Auto-scaling & load balancing",
+          "24/7 monitoring & alerting"
+        ]
+      }
+    }
+  },
+  "team": {
+    "eyebrow": "Engineering Team",
+    "heading": "Engineering excellence",
+    "description": "A multidisciplinary team delivering production systems with the rigor, reliability, and precision enterprise clients demand.",
+    "items": {
+      "fullstack": {
+        "title": "Full-Stack Architecture",
+        "discipline": "Application Engineering",
+        "description": "End-to-end system design spanning React, Next.js, mobile runtimes, and resilient API layers built for long-term maintainability.",
+        "expertise": [
+          "Next.js & React ecosystems",
+          "REST & GraphQL API design",
+          "Type-safe full-stack patterns"
+        ]
+      },
+      "devops": {
+        "title": "Cloud & Infrastructure DevOps",
+        "discipline": "Platform Engineering",
+        "description": "Production-grade cloud deployments with container orchestration, CI/CD pipelines, and observability across multi-region environments.",
+        "expertise": [
+          "Kubernetes & containerization",
+          "CI/CD pipeline automation",
+          "Monitoring & incident response"
+        ]
+      },
+      "automation": {
+        "title": "Automation Engineering",
+        "discipline": "Process Intelligence",
+        "description": "Custom automation frameworks that connect legacy systems, orchestrate workflows, and eliminate operational friction at scale.",
+        "expertise": [
+          "Workflow orchestration",
+          "Industrial system integration",
+          "Scripted process pipelines"
+        ]
+      }
+    }
+  },
+  "news": {
+    "heading": "News Updates",
+    "description": "Company announcements, partnerships, product launches, and stories from the Sepela Group team.",
+    "empty": "No news articles published yet. Check back soon.",
+    "seeAll": "See All News Updates >",
+    "views": "views",
+    "pageTitle": "News Updates | Sepela Group",
+    "pageDescription": "Latest company news, partnerships, product launches, and updates from Sepela Group.",
+    "heroDescription": "Announcements, partnerships, and stories from across Sepela Group.",
+    "showingResults": "Showing results for",
+    "noArticlesTitle": "No articles found",
+    "noArticlesDescription": "Try another search term or check back later for new updates.",
+    "viewAll": "View all news",
+    "articleNotFound": "Article Not Found | Sepela Group",
+    "breadcrumbHome": "Home",
+    "breadcrumbNews": "News",
+    "relatedArticles": "Related Articles",
+    "searchPlaceholder": "Search Here...",
+    "search": "Search",
+    "go": "Go",
+    "noRelated": "No related articles yet.",
+    "viewsCount": "Views"
+  },
+  "contact": {
+    "heading": "Ready to transform your operations?",
+    "title": "Get in touch with us",
+    "description": "Fill out the form below, and we'll get back to you as soon as possible.",
+    "benefits": [
+      "No commitment required",
+      "Tailored product demonstrations",
+      "Enterprise deployment guidance"
+    ],
+    "fullName": "Full Name",
+    "companyName": "Company Name",
+    "businessEmail": "Business Email",
+    "interest": "Product / Service of Interest",
+    "projectBrief": "Project Brief",
+    "selectOption": "Select an option",
+    "submit": "Request Consultation",
+    "submitting": "Submitting...",
+    "successTitle": "Request received",
+    "successDescription": "Our team will reach out shortly to confirm your consultation.",
+    "submitAnother": "Submit another request",
+    "placeholders": {
+      "fullName": "Jane Doe",
+      "companyName": "Acme Corporation",
+      "businessEmail": "jane@company.com",
+      "projectBrief": "Describe your goals, timeline, and technical requirements..."
+    },
+    "interests": {
+      "sepela-cinema": "Sepela Cinema",
+      "sepela-erp": "Sepela ERP",
+      "sepela-events": "Sepela Event",
+      "sepela-e-voting": "Sepela E-Voting",
+      "custom-app-development": "Custom App Development",
+      "business-automation": "Business & Process Automation",
+      "cloud-scaling": "Cloud Computing & Scaling",
+      "general-consultation": "General Consultation"
+    },
+    "validation": {
+      "fullNameRequired": "Full name is required.",
+      "fullNameMin": "Enter at least 2 characters.",
+      "companyNameRequired": "Company name is required.",
+      "companyNameMin": "Enter at least 2 characters.",
+      "emailRequired": "Business email is required.",
+      "emailInvalid": "Enter a valid email address.",
+      "interestRequired": "Select a product or service of interest.",
+      "briefRequired": "Project brief is required.",
+      "briefMin": "Provide at least 20 characters describing your project."
+    },
+    "errors": {
+      "submitFailed": "Submission failed. Please review your entries.",
+      "network": "Network error. Please try again."
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contactUs": "Contact Us",
+    "customDevelopment": "Custom Development",
+    "cloudInfrastructure": "Cloud Infrastructure",
+    "processAutomation": "Process Automation",
+    "enterpriseConsulting": "Enterprise Consulting",
+    "rights": "© {year} Sepela Group. All Rights Reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "logoAlt": "Sepela Group logo"
+  },
+  "common": {
+    "productNotFound": "Product Not Found | Sepela Group",
+    "breadcrumb": "Breadcrumb",
+    "language": "Language",
+    "followOn": "Follow Sepela Group on {platform}",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to homepage",
+    "adminPanel": "Admin panel",
+    "adminRouteHint": "The admin panel is at /admin (not /fr/admin)."
+  },
+  "errors": {
+    "unauthorized": "Unauthorized.",
+    "invalidJson": "Request body must be valid JSON.",
+    "unexpected": "An unexpected error occurred.",
+    "loginFailed": "Login failed.",
+    "invalidLogin": "Invalid login data.",
+    "invalidPassword": "Invalid password.",
+    "uploadFailed": "Upload failed.",
+    "noFileUploaded": "No file uploaded.",
+    "uploadFolderRequired": "Upload folder is required.",
+    "invalidImageType": "Only JPG, PNG, and WebP images are allowed.",
+    "imageTooLarge": "Image must be smaller than 5MB.",
+    "articleNotFound": "Article not found.",
+    "productNotFound": "Product not found.",
+    "fetchArticlesFailed": "Failed to fetch news articles.",
+    "fetchArticleFailed": "Failed to fetch article.",
+    "createArticleFailed": "Failed to create news article.",
+    "updateArticleFailed": "Failed to update article.",
+    "deleteArticleFailed": "Failed to delete article.",
+    "invalidArticleData": "Invalid article data.",
+    "fetchProductsFailed": "Failed to fetch products.",
+    "fetchProductFailed": "Failed to fetch product.",
+    "createProductFailed": "Failed to create product.",
+    "updateProductFailed": "Failed to update product.",
+    "deleteProductFailed": "Failed to delete product.",
+    "invalidProductData": "Invalid product data.",
+    "fetchSettingsFailed": "Failed to fetch site settings.",
+    "updateSettingsFailed": "Failed to update site settings.",
+    "invalidSettingsData": "Invalid settings data.",
+    "fetchContactsFailed": "Failed to fetch contact submissions.",
+    "contactSaveFailed": "We could not save your request right now. Please try again.",
+    "contactRateLimited": "Too many requests. Please wait before submitting again.",
+    "contactSuccess": "Consultation request received successfully.",
+    "databaseUnavailable": "Database is temporarily unreachable. Verify your Neon pooled DATABASE_URL and network connection.",
+    "databaseNotConfigured": "DATABASE_URL is not set. Using local JSON data until Neon is configured.",
+    "invalidUploadFolder": "Invalid upload folder.",
+    "validation": {
+      "fullNameMin": "Full name must be at least 2 characters.",
+      "companyNameMin": "Company name must be at least 2 characters.",
+      "emailInvalid": "A valid business email is required.",
+      "briefMin": "Project brief must be at least 20 characters.",
+      "invalidInterest": "Select a valid product or service.",
+      "passwordRequired": "Password is required.",
+      "urlInvalidOrBlank": "Enter a valid URL or leave blank.",
+      "invalidUploadFolder": "Invalid upload folder.",
+      "newsTitleMin": "Title must be at least 5 characters.",
+      "newsExcerptMin": "Excerpt must be at least 20 characters.",
+      "newsContentMin": "Article content must be at least 50 characters.",
+      "newsAuthorMin": "Author name is required.",
+      "newsCoverRequired": "Cover image is required.",
+      "productNameMin": "Product name must be at least 2 characters.",
+      "productTaglineMin": "Tagline must be at least 2 characters.",
+      "productDescriptionMin": "Short description must be at least 20 characters.",
+      "productContentMin": "Product details must be at least 20 characters.",
+      "productCoverRequired": "Cover image is required.",
+      "productFeatureMin": "Each feature must be at least 2 characters.",
+      "productFeaturesRequired": "At least one feature is required.",
+      "productFeaturesMax": "A maximum of 8 features is allowed.",
+      "settingsEmailInvalid": "A valid email address is required.",
+      "settingsPhoneMin": "Phone number must be at least 5 characters.",
+      "settingsAddressMin": "Address must be at least 2 characters.",
+      "settingsCityMin": "City must be at least 2 characters.",
+      "settingsCountryMin": "Country must be at least 2 characters.",
+      "settingsTaglineMin": "Footer tagline must be at least 10 characters."
+    }
+  },
+  "admin": {
+    "brand": "Admin",
+    "title": "Sepela Admin",
+    "logout": "Logout",
+    "nav": {
+      "news": "News",
+      "products": "Products",
+      "contacts": "Contacts",
+      "address": "Address",
+      "newArticle": "New Article",
+      "newProduct": "New Product"
+    },
+    "status": {
+      "published": "Published",
+      "draft": "Draft"
+    },
+    "actions": {
+      "edit": "Edit",
+      "view": "View",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "login": {
+      "title": "Admin Login",
+      "description": "Sign in to publish and manage company news articles.",
+      "password": "Password",
+      "signIn": "Sign In",
+      "signingIn": "Signing in..."
+    },
+    "database": {
+      "notice": "Database notice:",
+      "notConfigured": "DATABASE_URL is not set. Using local JSON data until Neon is configured.",
+      "unavailable": "Database is temporarily unreachable. Verify your Neon pooled DATABASE_URL and network connection."
+    },
+    "news": {
+      "listTitle": "News Articles",
+      "listDescription": "Create, edit, and publish company updates.",
+      "empty": "No articles yet. Create your first update.",
+      "tableTitle": "Title",
+      "tableDate": "Date",
+      "tableStatus": "Status",
+      "tableViews": "Views",
+      "tableActions": "Actions",
+      "createTitle": "New Article",
+      "editTitle": "Edit Article",
+      "formTitle": "Title",
+      "formExcerpt": "Excerpt",
+      "formContent": "Article Content",
+      "formAuthor": "Author",
+      "formCover": "Cover Image",
+      "formGallery": "Gallery Images",
+      "formPublished": "Publish immediately",
+      "contentPlaceholder": "Write paragraphs separated by a blank line.",
+      "galleryPlaceholder": "One image URL per line",
+      "uploadCover": "Upload cover image",
+      "uploadGallery": "Upload additional image",
+      "uploading": "Uploading...",
+      "coverPreview": "Cover preview",
+      "publishArticle": "Publish Article",
+      "updateArticle": "Update Article",
+      "saving": "Saving...",
+      "createPageTitle": "Create News Article",
+      "createPageDescription": "Write a company update, upload images, and publish it to the website.",
+      "editPageTitle": "Edit News Article",
+      "editPageDescription": "Update the article content, images, and publication status."
+    },
+    "products": {
+      "listTitle": "Products",
+      "listDescription": "Manage product listings, images, and detail pages.",
+      "empty": "No products yet. Create your first product.",
+      "tableName": "Name",
+      "tableOrder": "Order",
+      "tableStatus": "Status",
+      "tableActions": "Actions",
+      "createTitle": "New Product",
+      "editTitle": "Edit Product",
+      "formName": "Name",
+      "formTagline": "Tagline",
+      "formDescription": "Short Description",
+      "formContent": "Full Content",
+      "formCover": "Cover Image",
+      "formGallery": "Gallery Images",
+      "formFeatures": "Features",
+      "formIcon": "Icon",
+      "formSortOrder": "Sort Order",
+      "formPublished": "Publish immediately",
+      "featuresPlaceholder": "One feature per line",
+      "contentPlaceholder": "Write paragraphs separated by a blank line.",
+      "galleryPlaceholder": "One image URL per line",
+      "uploadCover": "Upload cover image",
+      "uploadGallery": "Upload gallery image",
+      "uploading": "Uploading...",
+      "coverPreview": "Cover preview",
+      "saving": "Saving...",
+      "publishProduct": "Publish Product",
+      "updateProduct": "Update Product",
+      "createPageTitle": "Create Product",
+      "createPageDescription": "Add a product listing with images and detail page content.",
+      "editPageTitle": "Edit Product",
+      "editPageDescription": "Update product details, images, and publication status.",
+      "deleteProduct": "Delete Product",
+      "deleteConfirm": "Are you sure you want to delete \"{name}\"? This action cannot be undone.",
+      "deleting": "Deleting..."
+    },
+    "contacts": {
+      "title": "Contact Submissions",
+      "description": "Messages received from the website contact form.",
+      "empty": "No contact submissions yet.",
+      "tableDate": "Date",
+      "tableName": "Name",
+      "tableCompany": "Company",
+      "tableEmail": "Email",
+      "tableInterest": "Interest",
+      "tableBrief": "Brief"
+    },
+    "address": {
+      "title": "Address & Contact Details",
+      "description": "Update contact details, footer text, and social media links shown on the website.",
+      "email": "Email",
+      "phone": "Phone",
+      "addressLine": "Address",
+      "city": "City",
+      "country": "Country",
+      "footerTagline": "Footer Tagline",
+      "socialTitle": "Social Media Links",
+      "socialDescription": "Add full profile URLs. Leave blank to hide a platform from the footer.",
+      "save": "Save Settings",
+      "saving": "Saving...",
+      "success": "Site contact and social details updated."
+    }
+  }
+}

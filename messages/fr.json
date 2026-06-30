@@ -1,0 +1,414 @@
+{
+  "metadata": {
+    "title": "Sepela Group | Solutions Technologiques d'Entreprise",
+    "description": "Sepela Group conçoit des infrastructures médias, retail et événementielles de qualité production pour les entreprises en Afrique et au-delà."
+  },
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "capabilities": "Services",
+    "team": "Équipe",
+    "news": "Actualités",
+    "contact": "Contact",
+    "contactUs": "Nous contacter",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "primary": "Navigation principale",
+    "logoAlt": "Logo Sepela Group"
+  },
+  "hero": {
+    "title": "Découvrez l'avenir de la technologie d'entreprise",
+    "lead": "Des solutions numériques complètes adaptées à votre activité — des plateformes de qualité production, conçues avec une technologie de pointe et une fiabilité enterprise.",
+    "exploreProducts": "Découvrir les produits",
+    "contactSales": "Contacter les ventes",
+    "metrics": {
+      "uptime": "Disponibilité système",
+      "regions": "Opérations régionales",
+      "transactions": "Transactions",
+      "clients": "Clients entreprise"
+    }
+  },
+  "products": {
+    "eyebrow": "Suite produits",
+    "heading": "Produits phares",
+    "description": "Découvrez comment notre suite d'applications de production transforme les opérations médias, retail et événementielles.",
+    "empty": "Les produits apparaîtront ici une fois publiés dans l'administration.",
+    "learnMore": "En savoir plus",
+    "keyFeatures": "Fonctionnalités clés",
+    "contactSales": "Contacter les ventes",
+    "backToProducts": "Retour aux produits",
+    "galleryAlt": "Galerie {name}",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbProducts": "Produits"
+  },
+  "capabilities": {
+    "eyebrow": "Services sur mesure",
+    "heading": "Services sur mesure",
+    "description": "Au-delà de notre suite produits, nous concevons et déployons des solutions personnalisées qui s'intègrent à votre infrastructure existante.",
+    "items": {
+      "customApps": {
+        "title": "Développement d'applications sur mesure",
+        "subtitle": "Web, mobile et desktop",
+        "description": "Des applications conçues pour vos flux de travail — des plateformes web responsives aux outils mobiles natifs et utilitaires desktop.",
+        "highlights": [
+          "Web et mobile multiplateforme",
+          "Outils utilitaires desktop",
+          "Architecture API-first"
+        ]
+      },
+      "automation": {
+        "title": "Automatisation des processus métier",
+        "subtitle": "Scripts industriels et workflows",
+        "description": "Éliminez les goulots d'étranglement manuels grâce à des pipelines d'automatisation intelligents, des intégrations industrielles et une orchestration sur mesure.",
+        "highlights": [
+          "Orchestration des workflows",
+          "Intégration de systèmes industriels",
+          "Automatisation de tâches planifiées"
+        ]
+      },
+      "cloud": {
+        "title": "Cloud et montée en charge",
+        "subtitle": "Infrastructure haute disponibilité",
+        "description": "Concevez, déployez et gérez une infrastructure cloud résiliente avec auto-scaling, basculement et optimisation des performances intégrés.",
+        "highlights": [
+          "Déploiement multi-régions",
+          "Auto-scaling et équilibrage de charge",
+          "Surveillance et alertes 24h/24"
+        ]
+      }
+    }
+  },
+  "team": {
+    "eyebrow": "Équipe d'ingénierie",
+    "heading": "Excellence en ingénierie",
+    "description": "Une équipe pluridisciplinaire qui livre des systèmes de production avec la rigueur, la fiabilité et la précision exigées par les clients enterprise.",
+    "items": {
+      "fullstack": {
+        "title": "Architecture full-stack",
+        "discipline": "Ingénierie applicative",
+        "description": "Conception de systèmes de bout en bout : React, Next.js, runtimes mobiles et couches API résilientes, pensées pour la maintenabilité à long terme.",
+        "expertise": [
+          "Écosystèmes Next.js et React",
+          "Conception d'API REST et GraphQL",
+          "Modèles full-stack typés"
+        ]
+      },
+      "devops": {
+        "title": "Cloud et DevOps infrastructure",
+        "discipline": "Ingénierie plateforme",
+        "description": "Déploiements cloud de qualité production avec orchestration de conteneurs, pipelines CI/CD et observabilité multi-régions.",
+        "expertise": [
+          "Kubernetes et conteneurisation",
+          "Automatisation des pipelines CI/CD",
+          "Surveillance et gestion d'incidents"
+        ]
+      },
+      "automation": {
+        "title": "Ingénierie de l'automatisation",
+        "discipline": "Intelligence des processus",
+        "description": "Des frameworks d'automatisation sur mesure qui connectent les systèmes legacy, orchestrent les workflows et réduisent les frictions opérationnelles à grande échelle.",
+        "expertise": [
+          "Orchestration des workflows",
+          "Intégration de systèmes industriels",
+          "Pipelines de processus scriptés"
+        ]
+      }
+    }
+  },
+  "news": {
+    "heading": "Actualités",
+    "description": "Annonces, partenariats, lancements produits et actualités de l'équipe Sepela Group.",
+    "empty": "Aucun article publié pour le moment. Revenez bientôt.",
+    "seeAll": "Voir toutes les actualités >",
+    "views": "vues",
+    "pageTitle": "Actualités | Sepela Group",
+    "pageDescription": "Dernières actualités, partenariats, lancements produits et mises à jour de Sepela Group.",
+    "heroDescription": "Annonces, partenariats et actualités de Sepela Group.",
+    "showingResults": "Résultats pour",
+    "noArticlesTitle": "Aucun article trouvé",
+    "noArticlesDescription": "Essayez un autre terme de recherche ou revenez plus tard.",
+    "viewAll": "Voir toutes les actualités",
+    "articleNotFound": "Article introuvable | Sepela Group",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbNews": "Actualités",
+    "relatedArticles": "Articles connexes",
+    "searchPlaceholder": "Rechercher...",
+    "search": "Rechercher",
+    "go": "OK",
+    "noRelated": "Aucun article connexe pour le moment.",
+    "viewsCount": "Vues"
+  },
+  "contact": {
+    "heading": "Prêt à transformer vos opérations ?",
+    "title": "Contactez-nous",
+    "description": "Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.",
+    "benefits": [
+      "Sans engagement",
+      "Démonstrations produits personnalisées",
+      "Accompagnement au déploiement enterprise"
+    ],
+    "fullName": "Nom complet",
+    "companyName": "Nom de l'entreprise",
+    "businessEmail": "E-mail professionnel",
+    "interest": "Produit / service concerné",
+    "projectBrief": "Description du projet",
+    "selectOption": "Sélectionnez une option",
+    "submit": "Demander une consultation",
+    "submitting": "Envoi en cours...",
+    "successTitle": "Demande reçue",
+    "successDescription": "Notre équipe vous contactera prochainement pour confirmer votre consultation.",
+    "submitAnother": "Soumettre une autre demande",
+    "placeholders": {
+      "fullName": "Jean Dupont",
+      "companyName": "Entreprise SA",
+      "businessEmail": "jean@entreprise.com",
+      "projectBrief": "Décrivez vos objectifs, délais et exigences techniques..."
+    },
+    "interests": {
+      "sepela-cinema": "Sepela Cinema",
+      "sepela-erp": "Sepela ERP",
+      "sepela-events": "Sepela Event",
+      "sepela-e-voting": "Sepela E-Voting",
+      "custom-app-development": "Développement d'applications sur mesure",
+      "business-automation": "Automatisation des processus métier",
+      "cloud-scaling": "Cloud et montée en charge",
+      "general-consultation": "Consultation générale"
+    },
+    "validation": {
+      "fullNameRequired": "Le nom complet est requis.",
+      "fullNameMin": "Saisissez au moins 2 caractères.",
+      "companyNameRequired": "Le nom de l'entreprise est requis.",
+      "companyNameMin": "Saisissez au moins 2 caractères.",
+      "emailRequired": "L'e-mail professionnel est requis.",
+      "emailInvalid": "Saisissez une adresse e-mail valide.",
+      "interestRequired": "Sélectionnez un produit ou service.",
+      "briefRequired": "La description du projet est requise.",
+      "briefMin": "Fournissez au moins 20 caractères décrivant votre projet."
+    },
+    "errors": {
+      "submitFailed": "Échec de l'envoi. Veuillez vérifier vos informations.",
+      "network": "Erreur réseau. Veuillez réessayer."
+    }
+  },
+  "footer": {
+    "quickLinks": "Liens rapides",
+    "services": "Services",
+    "contactUs": "Nous contacter",
+    "customDevelopment": "Développement sur mesure",
+    "cloudInfrastructure": "Infrastructure cloud",
+    "processAutomation": "Automatisation des processus",
+    "enterpriseConsulting": "Conseil enterprise",
+    "rights": "© {year} Sepela Group. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "logoAlt": "Logo Sepela Group"
+  },
+  "common": {
+    "productNotFound": "Produit introuvable | Sepela Group",
+    "breadcrumb": "Fil d'Ariane",
+    "language": "Langue",
+    "followOn": "Suivez Sepela Group sur {platform}",
+    "notFoundTitle": "Page introuvable",
+    "notFoundDescription": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil",
+    "adminPanel": "Panneau admin",
+    "adminRouteHint": "L'administration est accessible sur /admin (pas /fr/admin)."
+  },
+  "errors": {
+    "unauthorized": "Non autorisé.",
+    "invalidJson": "Le corps de la requête doit être un JSON valide.",
+    "unexpected": "Une erreur inattendue s'est produite.",
+    "loginFailed": "Échec de la connexion.",
+    "invalidLogin": "Données de connexion invalides.",
+    "invalidPassword": "Mot de passe incorrect.",
+    "uploadFailed": "Échec du téléversement.",
+    "noFileUploaded": "Aucun fichier téléversé.",
+    "uploadFolderRequired": "Le dossier de téléversement est requis.",
+    "invalidImageType": "Seules les images JPG, PNG et WebP sont autorisées.",
+    "imageTooLarge": "L'image doit être inférieure à 5 Mo.",
+    "articleNotFound": "Article introuvable.",
+    "productNotFound": "Produit introuvable.",
+    "fetchArticlesFailed": "Impossible de récupérer les articles.",
+    "fetchArticleFailed": "Impossible de récupérer l'article.",
+    "createArticleFailed": "Impossible de créer l'article.",
+    "updateArticleFailed": "Impossible de mettre à jour l'article.",
+    "deleteArticleFailed": "Impossible de supprimer l'article.",
+    "invalidArticleData": "Données d'article invalides.",
+    "fetchProductsFailed": "Impossible de récupérer les produits.",
+    "fetchProductFailed": "Impossible de récupérer le produit.",
+    "createProductFailed": "Impossible de créer le produit.",
+    "updateProductFailed": "Impossible de mettre à jour le produit.",
+    "deleteProductFailed": "Impossible de supprimer le produit.",
+    "invalidProductData": "Données produit invalides.",
+    "fetchSettingsFailed": "Impossible de récupérer les paramètres du site.",
+    "updateSettingsFailed": "Impossible de mettre à jour les paramètres du site.",
+    "invalidSettingsData": "Données de paramètres invalides.",
+    "fetchContactsFailed": "Impossible de récupérer les messages de contact.",
+    "contactSaveFailed": "Impossible d'enregistrer votre demande pour le moment. Veuillez réessayer.",
+    "contactRateLimited": "Trop de demandes. Veuillez patienter avant de réessayer.",
+    "contactSuccess": "Demande de consultation reçue avec succès.",
+    "databaseUnavailable": "La base de données est temporairement inaccessible. Vérifiez votre DATABASE_URL Neon et votre connexion réseau.",
+    "databaseNotConfigured": "DATABASE_URL n'est pas défini. Utilisation des données JSON locales jusqu'à la configuration de Neon.",
+    "invalidUploadFolder": "Dossier de téléversement invalide.",
+    "validation": {
+      "fullNameMin": "Le nom complet doit contenir au moins 2 caractères.",
+      "companyNameMin": "Le nom de l'entreprise doit contenir au moins 2 caractères.",
+      "emailInvalid": "Une adresse e-mail professionnelle valide est requise.",
+      "briefMin": "La description du projet doit contenir au moins 20 caractères.",
+      "invalidInterest": "Sélectionnez un produit ou service valide.",
+      "passwordRequired": "Le mot de passe est requis.",
+      "urlInvalidOrBlank": "Saisissez une URL valide ou laissez vide.",
+      "invalidUploadFolder": "Dossier de téléversement invalide.",
+      "newsTitleMin": "Le titre doit contenir au moins 5 caractères.",
+      "newsExcerptMin": "Le résumé doit contenir au moins 20 caractères.",
+      "newsContentMin": "Le contenu doit contenir au moins 50 caractères.",
+      "newsAuthorMin": "Le nom de l'auteur est requis.",
+      "newsCoverRequired": "L'image de couverture est requise.",
+      "productNameMin": "Le nom du produit doit contenir au moins 2 caractères.",
+      "productTaglineMin": "L'accroche doit contenir au moins 2 caractères.",
+      "productDescriptionMin": "La description courte doit contenir au moins 20 caractères.",
+      "productContentMin": "Les détails du produit doivent contenir au moins 20 caractères.",
+      "productCoverRequired": "L'image de couverture est requise.",
+      "productFeatureMin": "Chaque fonctionnalité doit contenir au moins 2 caractères.",
+      "productFeaturesRequired": "Au moins une fonctionnalité est requise.",
+      "productFeaturesMax": "Un maximum de 8 fonctionnalités est autorisé.",
+      "settingsEmailInvalid": "Une adresse e-mail valide est requise.",
+      "settingsPhoneMin": "Le numéro de téléphone doit contenir au moins 5 caractères.",
+      "settingsAddressMin": "L'adresse doit contenir au moins 2 caractères.",
+      "settingsCityMin": "La ville doit contenir au moins 2 caractères.",
+      "settingsCountryMin": "Le pays doit contenir au moins 2 caractères.",
+      "settingsTaglineMin": "L'accroche du pied de page doit contenir au moins 10 caractères."
+    }
+  },
+  "admin": {
+    "brand": "Administration",
+    "title": "Admin Sepela",
+    "logout": "Déconnexion",
+    "nav": {
+      "news": "Actualités",
+      "products": "Produits",
+      "contacts": "Contacts",
+      "address": "Adresse",
+      "newArticle": "Nouvel article",
+      "newProduct": "Nouveau produit"
+    },
+    "status": {
+      "published": "Publié",
+      "draft": "Brouillon"
+    },
+    "actions": {
+      "edit": "Modifier",
+      "view": "Voir",
+      "cancel": "Annuler",
+      "delete": "Supprimer"
+    },
+    "login": {
+      "title": "Connexion admin",
+      "description": "Connectez-vous pour publier et gérer les actualités de l'entreprise.",
+      "password": "Mot de passe",
+      "signIn": "Se connecter",
+      "signingIn": "Connexion..."
+    },
+    "database": {
+      "notice": "Avis base de données :",
+      "notConfigured": "DATABASE_URL n'est pas défini. Utilisation des données JSON locales jusqu'à la configuration de Neon.",
+      "unavailable": "La base de données est temporairement inaccessible. Vérifiez votre DATABASE_URL Neon et votre connexion réseau."
+    },
+    "news": {
+      "listTitle": "Articles d'actualité",
+      "listDescription": "Créez, modifiez et publiez les mises à jour de l'entreprise.",
+      "empty": "Aucun article pour le moment. Créez votre première actualité.",
+      "tableTitle": "Titre",
+      "tableDate": "Date",
+      "tableStatus": "Statut",
+      "tableViews": "Vues",
+      "tableActions": "Actions",
+      "createTitle": "Nouvel article",
+      "editTitle": "Modifier l'article",
+      "formTitle": "Titre",
+      "formExcerpt": "Extrait",
+      "formContent": "Contenu de l'article",
+      "formAuthor": "Auteur",
+      "formCover": "Image de couverture",
+      "formGallery": "Images de la galerie",
+      "formPublished": "Publier immédiatement",
+      "contentPlaceholder": "Rédigez des paragraphes séparés par une ligne vide.",
+      "galleryPlaceholder": "Une URL d'image par ligne",
+      "uploadCover": "Téléverser l'image de couverture",
+      "uploadGallery": "Téléverser une image supplémentaire",
+      "uploading": "Téléversement...",
+      "coverPreview": "Aperçu de la couverture",
+      "publishArticle": "Publier l'article",
+      "updateArticle": "Mettre à jour l'article",
+      "saving": "Enregistrement...",
+      "createPageTitle": "Créer un article",
+      "createPageDescription": "Rédigez une actualité, téléversez des images et publiez-la sur le site.",
+      "editPageTitle": "Modifier l'article",
+      "editPageDescription": "Mettez à jour le contenu, les images et le statut de publication."
+    },
+    "products": {
+      "listTitle": "Produits",
+      "listDescription": "Gérez les fiches produits, images et pages de détail.",
+      "empty": "Aucun produit pour le moment. Créez votre premier produit.",
+      "tableName": "Nom",
+      "tableOrder": "Ordre",
+      "tableStatus": "Statut",
+      "tableActions": "Actions",
+      "createTitle": "Nouveau produit",
+      "editTitle": "Modifier le produit",
+      "formName": "Nom",
+      "formTagline": "Accroche",
+      "formDescription": "Description courte",
+      "formContent": "Contenu complet",
+      "formCover": "Image de couverture",
+      "formGallery": "Images de la galerie",
+      "formFeatures": "Fonctionnalités",
+      "formIcon": "Icône",
+      "formSortOrder": "Ordre d'affichage",
+      "formPublished": "Publier immédiatement",
+      "featuresPlaceholder": "Une fonctionnalité par ligne",
+      "contentPlaceholder": "Rédigez des paragraphes séparés par une ligne vide.",
+      "galleryPlaceholder": "Une URL d'image par ligne",
+      "uploadCover": "Téléverser l'image de couverture",
+      "uploadGallery": "Téléverser une image de galerie",
+      "uploading": "Téléversement...",
+      "coverPreview": "Aperçu de la couverture",
+      "saving": "Enregistrement...",
+      "publishProduct": "Publier le produit",
+      "updateProduct": "Mettre à jour le produit",
+      "createPageTitle": "Créer un produit",
+      "createPageDescription": "Ajoutez une fiche produit avec images et contenu de page détail.",
+      "editPageTitle": "Modifier le produit",
+      "editPageDescription": "Mettez à jour les détails, images et statut de publication.",
+      "deleteProduct": "Supprimer le produit",
+      "deleteConfirm": "Voulez-vous vraiment supprimer « {name} » ? Cette action est irréversible.",
+      "deleting": "Suppression..."
+    },
+    "contacts": {
+      "title": "Messages de contact",
+      "description": "Messages reçus via le formulaire de contact du site.",
+      "empty": "Aucun message de contact pour le moment.",
+      "tableDate": "Date",
+      "tableName": "Nom",
+      "tableCompany": "Entreprise",
+      "tableEmail": "E-mail",
+      "tableInterest": "Intérêt",
+      "tableBrief": "Description"
+    },
+    "address": {
+      "title": "Adresse et coordonnées",
+      "description": "Mettez à jour les coordonnées, le texte du pied de page et les liens des réseaux sociaux.",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "addressLine": "Adresse",
+      "city": "Ville",
+      "country": "Pays",
+      "footerTagline": "Accroche du pied de page",
+      "socialTitle": "Liens des réseaux sociaux",
+      "socialDescription": "Ajoutez les URL complètes des profils. Laissez vide pour masquer une plateforme du pied de page.",
+      "save": "Enregistrer les paramètres",
+      "saving": "Enregistrement...",
+      "success": "Coordonnées et réseaux sociaux mis à jour."
+    }
+  }
+}

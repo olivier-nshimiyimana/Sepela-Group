@@ -4,6 +4,7 @@ import {
   Workflow,
   type LucideIcon,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 interface Capability {
   id: string;
@@ -14,47 +15,11 @@ interface Capability {
   icon: LucideIcon;
 }
 
-const CAPABILITIES: readonly Capability[] = [
-  {
-    id: "custom-apps",
-    title: "Custom App Development",
-    subtitle: "Web, Mobile & Desktop",
-    description:
-      "Bespoke applications engineered for your workflows — from responsive web platforms to native mobile utilities and desktop tooling.",
-    highlights: [
-      "Cross-platform web & mobile",
-      "Desktop utility tooling",
-      "API-first architecture",
-    ],
-    icon: AppWindow,
-  },
-  {
-    id: "automation",
-    title: "Business & Process Automation",
-    subtitle: "Industrial & Workflow Scripts",
-    description:
-      "Eliminate manual bottlenecks with intelligent automation pipelines, industrial integrations, and custom workflow orchestration.",
-    highlights: [
-      "Workflow orchestration",
-      "Industrial system integration",
-      "Scheduled task automation",
-    ],
-    icon: Workflow,
-  },
-  {
-    id: "cloud",
-    title: "Cloud Computing & Scaling",
-    subtitle: "High-Availability Infrastructure",
-    description:
-      "Design, deploy, and manage resilient cloud infrastructure with auto-scaling, failover, and performance optimization baked in.",
-    highlights: [
-      "Multi-region deployment",
-      "Auto-scaling & load balancing",
-      "24/7 monitoring & alerting",
-    ],
-    icon: Cloud,
-  },
-] as const;
+const CAPABILITY_ICONS = {
+  customApps: AppWindow,
+  automation: Workflow,
+  cloud: Cloud,
+} as const;
 
 interface CapabilityCardProps {
   capability: Capability;
@@ -72,27 +37,21 @@ function CapabilityCard({
         <Icon aria-hidden="true" className="relative h-7 w-7" />
       </div>
 
-      <p
-        className="text-xs font-semibold uppercase tracking-widest"
-        style={{ color: "var(--color-brand-primary)" }}
-      >
+      <p className="card-eyebrow">
         {capability.subtitle}
       </p>
 
-      <h3 className="mt-2 text-xl font-bold text-text-primary sm:text-2xl">
+      <h3 className="card-title mt-2">
         {capability.title}
       </h3>
 
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-text-secondary">
+      <p className="card-body mt-3 flex-1">
         {capability.description}
       </p>
 
-      <ul className="mt-5 flex flex-col gap-2" role="list">
+      <ul className="mt-5 flex flex-col gap-2.5 sm:gap-2" role="list">
         {capability.highlights.map((highlight) => (
-          <li
-            key={highlight}
-            className="flex items-center gap-2 text-sm text-text-primary"
-          >
+          <li key={highlight} className="card-list-item">
             <span aria-hidden="true" className="ai-feature-dot" />
             {highlight}
           </li>
@@ -102,27 +61,37 @@ function CapabilityCard({
   );
 }
 
-export function Capabilities(): React.ReactElement {
+export async function Capabilities(): Promise<React.ReactElement> {
+  const t = await getTranslations("capabilities");
+
+  const capabilities: Capability[] = (
+    Object.keys(CAPABILITY_ICONS) as Array<keyof typeof CAPABILITY_ICONS>
+  ).map((id) => ({
+    id,
+    title: t(`items.${id}.title`),
+    subtitle: t(`items.${id}.subtitle`),
+    description: t(`items.${id}.description`),
+    highlights: t.raw(`items.${id}.highlights`) as string[],
+    icon: CAPABILITY_ICONS[id],
+  }));
+
   return (
     <section
       id="capabilities"
       aria-labelledby="capabilities-heading"
-      className="bg-white py-20 sm:py-28"
+      className="bg-white section-spacing"
     >
       <div className="section-container">
-        <header className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-          <span className="section-eyebrow">Bespoke Services</span>
+        <header className="section-header">
+          <span className="section-eyebrow">{t("eyebrow")}</span>
           <h2 id="capabilities-heading" className="section-heading mt-2">
-            Bespoke Services
+            {t("heading")}
           </h2>
-          <p className="section-description mt-4">
-            Beyond our product suite, we design and deliver custom solutions
-            that integrate seamlessly with your existing infrastructure.
-          </p>
+          <p className="section-description mt-4">{t("description")}</p>
         </header>
 
         <div className="grid gap-6 md:grid-cols-3 lg:gap-8">
-          {CAPABILITIES.map((capability) => (
+          {capabilities.map((capability) => (
             <CapabilityCard key={capability.id} capability={capability} />
           ))}
         </div>
