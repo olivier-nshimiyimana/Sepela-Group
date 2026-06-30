@@ -219,6 +219,8 @@
     "invalidJson": "Request body must be valid JSON.",
     "unexpected": "An unexpected error occurred.",
     "loginFailed": "Login failed.",
+    "adminSessionSecretMissing": "Admin login is not ready: set ADMIN_SESSION_SECRET (32+ characters) in server environment variables.",
+    "adminPasswordMissing": "Admin login is not ready: set a strong ADMIN_PASSWORD in server environment variables.",
     "invalidLogin": "Invalid login data.",
     "invalidPassword": "Invalid password.",
     "uploadFailed": "Upload failed.",

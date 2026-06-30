@@ -5,30 +5,41 @@ const SESSION_MESSAGE = "sepela-admin-session";
 const MIN_SESSION_SECRET_LENGTH = 32;
 const DEV_SESSION_FALLBACK = "sepela-dev-secret";
 
-function assertProductionAdminConfig(): void {
+function getTrimmedEnv(name: string): string | undefined {
+  const value = process.env[name]?.trim();
+  return value || undefined;
+}
+
+export function getAdminConfigErrorKey():
+  | "adminSessionSecretMissing"
+  | "adminPasswordMissing"
+  | null {
   if (process.env.NODE_ENV !== "production") {
-    return;
+    return null;
   }
 
-  const secret = process.env.ADMIN_SESSION_SECRET;
+  const secret = getTrimmedEnv("ADMIN_SESSION_SECRET");
   if (!secret || secret.length < MIN_SESSION_SECRET_LENGTH) {
-    throw new Error(
-      "ADMIN_SESSION_SECRET must be set to at least 32 characters in production",
-    );
+    return "adminSessionSecretMissing";
   }
 
-  const password = process.env.ADMIN_PASSWORD;
+  const password = getTrimmedEnv("ADMIN_PASSWORD");
   if (!password || password === "sepela-admin") {
-    throw new Error("ADMIN_PASSWORD must be set to a strong value in production");
+    return "adminPasswordMissing";
   }
+
+  return null;
 }
 
 function getSessionSecret(): string {
-  assertProductionAdminConfig();
+  const configError = getAdminConfigErrorKey();
+  if (configError) {
+    throw new Error(configError);
+  }
 
   return (
-    process.env.ADMIN_SESSION_SECRET ??
-    process.env.ADMIN_PASSWORD ??
+    getTrimmedEnv("ADMIN_SESSION_SECRET") ??
+    getTrimmedEnv("ADMIN_PASSWORD") ??
     DEV_SESSION_FALLBACK
   );
 }
@@ -82,8 +93,11 @@ export async function isValidAdminSessionToken(
 }
 
 export function verifyAdminPassword(password: string): boolean {
-  assertProductionAdminConfig();
-  const configuredPassword = process.env.ADMIN_PASSWORD ?? "sepela-admin";
+  if (getAdminConfigErrorKey()) {
+    return false;
+  }
+
+  const configuredPassword = getTrimmedEnv("ADMIN_PASSWORD") ?? "sepela-admin";
   return safeEqual(password, configuredPassword);
 }
 

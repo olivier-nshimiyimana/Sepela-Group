@@ -219,6 +219,8 @@
     "invalidJson": "Le corps de la requête doit être un JSON valide.",
     "unexpected": "Une erreur inattendue s'est produite.",
     "loginFailed": "Échec de la connexion.",
+    "adminSessionSecretMissing": "Connexion admin indisponible : définissez ADMIN_SESSION_SECRET (32+ caractères) dans les variables d'environnement du serveur.",
+    "adminPasswordMissing": "Connexion admin indisponible : définissez un ADMIN_PASSWORD fort dans les variables d'environnement du serveur.",
     "invalidLogin": "Données de connexion invalides.",
     "invalidPassword": "Mot de passe incorrect.",
     "uploadFailed": "Échec du téléversement.",

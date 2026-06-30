@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import {
   createAdminSessionToken,
+  getAdminConfigErrorKey,
   getAdminCookieName,
   verifyAdminPassword,
 } from "@/lib/auth/admin";
@@ -10,6 +11,12 @@ import { adminLoginSchema } from "@/lib/validations/admin";
 
 export async function POST(request: Request): Promise<NextResponse> {
   try {
+    const configError = getAdminConfigErrorKey();
+    if (configError) {
+      console.error("[admin/login] Server misconfigured:", configError);
+      return apiError(request, configError, 503);
+    }
+
     const body: unknown = await request.json();
     const parsed = adminLoginSchema.safeParse(body);
 
